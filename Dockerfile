@@ -20,7 +20,7 @@ RUN apt update && \
 COPY --from=builder /fr24feed_armhf/fr24feed /usr/bin/fr24feed
 RUN ["chmod", "+x", "/usr/bin/fr24feed"]
 
-COPY startup.sh /startup.sh
-RUN ["chmod", "+x", "/startup.sh"]
+COPY run.sh /run.sh
+RUN ["chmod", "+x", "/run.sh"]
 
-ENTRYPOINT ["/startup.sh"]
+ENTRYPOINT ["/run.sh"]
